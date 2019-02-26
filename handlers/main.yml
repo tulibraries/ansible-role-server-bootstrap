@@ -1,0 +1,14 @@
+---
+# handlers file for ansible-role-server-bootstrap
+
+- name: restart sshd
+  service:
+    name: sshd
+    state: restarted
+  become: yes
+
+- name: restart firewalld
+  service:
+    name: firewalld
+    state: restarted
+  become: yes

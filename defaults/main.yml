@@ -1,0 +1,37 @@
+---
+# defaults file for ansible-role-server-bootstrap
+
+users:
+  - name: cdoyle
+    authorized:
+      - https://github.com/cdoyle-temple.keys
+  - name: tuj27080
+    authorized:
+      - https://github.com/dkinzer.keys
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHqdYn74gNSfOH2Mu/OJDGzLpuMrB55jUHD2Sfrd5Qd8mFTuqynenndKRLPfk0fs95dQjFWCvIiuVCGYa1sCZ1vwqIo6J5/vzTckOqbdbcWCcwbdbFGX/uh/kmnO0yegUmw0vsRuBZ+tRFcPieN+Msd6puaEdiSWIQyDsNEQHHuRUuC562xT8iY9LXQ9PhzmZ4Bn49MAMuo9OrEIwVR1ke6UgDJwVUmqbE1Ku54ALwa7CHmQq87JjBeFOMb26IcuvcnhDqPHcWZjq5TBDU2A+RTXjSUTERC+z3hlrepbLkZTTHaTbbFyOcY/Jbzacys0MpudXV7d0T/wvRrEg87Z5hTNwxmQLC7Ilp/bwtNf6lKdT8rlv+q/KisJhlaT7wcykCCUnoeBVOlFBt/piOLKmYgMCXpRULZO8WG1/PfeUemUbzDIvAf3avZc27mtj4aVGofPjvfW0ieBDIqCGdTdodd7srBNfXUb/IFPqUjyE/tq654o38rKmfdAMk9a4tKC52EYXNA8KvcLRYYrp9lTO9h0wBazo4RdOzGjpvt5wYmwM9joJbl0oDAlXukIWsThDSm6/Yv+w0NVsGj8uytl5/sBgtU289eEnxm2LKtNQVteNZ5tM7vl4SIhHxLfTKDNgMpka/SIZwdoiJrdwFByKp+1Q0Evf4GG6eTZEJdBAWhw=="
+  - name: tug78195
+    authorized:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYqTSVt4mBtzW6UABegs6R/9QQhR5KUqc4KfnghFtWdIQB9dOChPg3idXFuREoM8MktYgtSCohDguOKt4cH/uKvNiH/4jidaUSZUnfY6/U8k0gBMOsgeDmCEs1p3waCL/90liRY1U7ouMrQmO80i1XbzqmehffQJ84txDPfgIeGP3u1Z1tHTpDv1umi4vmZzjzYzEAZz17LnEJREuLG/JwdZQ8CRLUKQLHeFMj/qj3/zNCL+HBvrVIHhTmSfnDpyeCdp6q2tiAPQlK0rgSZUWZs+XCWw9S94MSABR6RJ5ZZ7itCrrMdTV5t0MhK3F9vdI9kp2n6/VnNibfx5qIfOgZ david.lacy@temple.edu"
+  - name: tug34268
+    authorized:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDOfYguovMJ9cfvRZUyJgXVutL+PWgNi+51dys0wOj0NsELMMM2urNHPHPtVNC4qJ/ZkF/Mg/3FI7ITFNiyOLw3dNiE/Idp5QlYeCrP2CjAzKxfAxcFpXnV23vLApImaLfvIWBIrakayn5YnMMWT3xsnqfqt8sMEMSQyiXg4XqhNpAuKd7ck3DvjSBuN3KQjMMD7Fy1b5dMHO/sCPg88MnqUplne4PuzIfB9BJ+iZYWQD1Depm0OdWRQnWar0i5978jTTlv6kBNbSNPzXegTqeyQm0dAV01of0hfmMI+KRTYGD6+PjxThmDSdP3ip8bT51B5KrULinjaAg3s+AYZsnJQpUb6AVdRRMl/ZPTk7LHFglfpgi+G2PdCnmKBVazd1FXrCjlDcHKi8TcPUkHBWFC+Uw9hrA+7wx81XzOU2civpQJc2xd7dpE20oQ4qeGwIFzytMiIl8JEY8PvvHeE25GhR/wao+rCVawbF4fU5tMtb7FjSbDFVd8Mna8L4jSqr9AyUnG5fmogaprBXGeyZ7R9c501KxhkfMsXkGbCQGCHYQtfaYOy174UHnbQCMnOKmF1N+fp6a5Qpkqlz83yMne9O3V3Eyu+MN1zRn4uIEgpnLN5ngAJVK9DjJ1/CwKBlFEfk5gTDVfXg1I3s4j6+JkwckaaJixpp0BHsy7oWykww== chad.nelson@temple.edu"
+  - name: tug76662
+    authorized:
+      - https://github.com/relaxing.keys
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzTfSSH9yi4BU4EyPepVO7TioB7xYEw51zWsg3ZfYFLRPgro5sXj0yfDmCF2xP6MjOU3kTWgRGw7ovDGmZyHy1v8GexdL4F0gcDrqt1borrQeJtXaeDAV0ggwKgzxKwZpmPY5FIpG+/H2oBnN8sbWF6oDxXg1HsimYk7Iugn0v62zNIiJ97XU7zWSc/zvnszmoiu+Lwv+ijXPcamd52N5ScLiJ5+r9rGu4goRHk4Bp4Kddi1pEexIR0h1Uu4YBCILaMwhTG9lND9n20NOo15I8Du7jcBw5ULTh9B9hK98IehuaQ/i9IMXCbKXHvukUF6sggnqmPIqciDex8RD/3/Ex tug76662@LIB-DLI-TBMBP.tu.temple.edu"
+  - name: tuf73699
+    authorized:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpPIvJcG07yr/CVPk/dYW5geeGvvzZ3yG91Z3/QGtGeuovwb1dtklWMAXAqrx9gT8B80Q/HF4uuWTi+lf6ja46ig7JsLsHXg9esnFmFjtnqlqUP4jFu+i2klBsE/fdFG9FVCYeXxrJMhR4qVhFj4o+jldeALvHuEw7AINSvVlMpSaZ14YeY2goKy52LW9xcVrY2idVMTbAftU7pOmmFDvjMsURnUdYOaQhrAWH8fCiIapi2lMO7dGl0TPj5r5yR5Cjw/gXcgL/sU6nPmTNh50Gni4NYUrcF9CkLRCjfLU5T7dMYcrL/mXtek8s/rVMNTw/Du1ZWgWhjYVkuIJvc80n tuf73699@lib-pal-dli-sn.lib.temple.edu"
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmlgPlDQ1CNJ/kCPc6sqpDalE1xnifCn++4GVKKl+EBiScmnWuVMQ9zUFOqhA667f6j3NEFzAbRwnNEVvbg7BqX56COwCvxrKR/fwkexKRtvHVHAGLFtZ8Ng3aIimzAw3nURWIGuUTciH2m1N/Npo1UuSY/VvDuhhg7mNgGqIs6OvH55t7No3eyq/DceVJCtPacd6ygwCfGyFAEmxfwT1Xh1udZKx21MdlBWMkCwuV/fnwm6uLD8WUBeXtUIIBlpNUcFkTIL1cSUkjKPqRQ67OFR2GJ+4k2EuT/E5wwfh5ltnIgd2N3CrvV40P5RvPzG0KMkiSwN7kffcwneM3efmv skng@80-e6-50-18-81-da.wireless.temple.edu"
+  - name: tud19265
+    authorized:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAo4TneEhdTuIHcHbFv6ACK12440Hr/fqntq2D2/+38lLGxHs7NcQi1EplNSxQYzTb7BkcUeI+b9ifWrp58nj6SlNexETfRLrs0wOL7EwFJb6loWkyKEs6NkztcufAjcC8W08q3onfEUoBH7kCq3De5vk5CzlsOif4Rj0tZyB/xYqO3f96bbQ0w6c8Ki3Me5LYF3bMuoyi+z0Tuxqoa8DkZWjafs5XdPF1fcZObHErAZL8mLzRG2MUhijszSkLkVazNffjCY/RygcPIRQqrFS/FJRNItXUYkPkPY+JIQhPJ5WjWnVro6bmD1p+oIWgqAArh7CKvEeQU7EXHs7+0/FbLoHVygeLOTjzqFQSetFDJdHv7pF0TuxNVJU2hJkneKv1L6aGvRQ+NnAJjSt31M2CD1OeecEwmyiI33wYP4eCg3PI2XVnRWQhvC3z5+1rFmrISFByZI5zsuiQYvHWPKuuZrhICUy23SDsmASxgXOG6BDNWUjTS0wvvMhuba1LjzujmbObA2aPRXO6C1JqKEgFJZmfMqPIL0U5L4lQcivMgzGr6nNGOqOhfB//9fZYLCJi/jKFDkJxwsPkUO+9DIcA7ehqrSHgtLAC5gmYlHJYDWrKQjmlJr7UT5LZdHQ23L4/hBHjsy2mmdN3g4XTIwjowHJMI0SVdy8n/naJs0ZFqvs= rsa-key-20161215"
+  - name: tul08567
+    authorized:
+      - https://github.com/cmharlow.keys
+  - name: tuh42082
+    authorized:
+      - https://github.com/sensei100.keys
+  - name: conan_the_deployer
+    authorized:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDNdyy/Nv2sbf2jwhTksqQSHvCAQ9+8BrZApCAu6N80oMqPGC9oeohrNcr2zonL+K5LsWxxtxNIQDB2qlo5JR/jP/vBTyzUmxU1B7FP50a2JyziLxzAQUPdVp9zdnv/bncyhJCHo1+XWfy6ZWpNV2ejumHjeAqiIkNGg5jB0JuOo0umiyIS+v1mh2G0kwSsf1rIz//avlLqhydQQfOUR6fp635N2kZYgPMOE/07beNAxQHy6zRq/tCvlBmUhJg8Sm/STnpevKMUV9xcI1IFLNtbHFUPdvGjdFKplRL8Bn28Zzja92aYZ7miNKQiNL1sFyxmwSkKEOdlnvZzfX6quCIH6bEGz2vZPJRGhPav455Iu6/HbWzjOlqF0sK9pOYKHBFSk6sSWrgAT6eg325nXjLzNIQLvlbq5EQsxP3Tr5bkVPPd05PmTbtrYr8jv7HmPp59D2o8qJWXK1mSegegvYtXcowFZXD5o6AyhoAb4IMPNWOMgWMreWK8WPbkFLf6L4WYV3i92v92HcfVddhWy74G2V7zIK/77IR7lYZZSlFmv6UD/fhnuw6bouPpE08TH5aTOT5wg9V3MkfgviJoALECjwdLSo6KFRkeUimKWIe7KvRyY6UHYzs5PZJEpShyuvnkJm9t2ejseStLP+dRHcLiCyBRta2RCcLTx7JkXC416Q== conan_the_deployer@temple.edu"

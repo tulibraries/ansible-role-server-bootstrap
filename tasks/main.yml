@@ -1,0 +1,54 @@
+---
+# tasks file for ansible-role-server-bootstrap
+
+- name: Install some basic utility packages
+  package:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - vim
+    - htop
+    - sendmail
+    - monit
+    - fail2ban
+    - zip
+    - policycoreutils-python
+
+- name: Set selinux to permissive mode
+  selinux:
+    policy: targeted
+    state: permissive
+
+- include: add-users.yml
+
+- name: update the ssh deamon to listen on non standard port
+  lineinfile:
+     dest: /etc/ssh/sshd_config
+     state: present
+     regexp: "^Port"
+     line: "Port 9229"
+     validate: 'sshd -T -f %s'
+  notify: restart sshd
+
+- name: Disable passwords on SSH.
+lineinfile:
+  dest: /etc/ssh/sshd_config
+  state: present
+  regexp: "^PermitRootLogin prohibit-password"
+  line: "PermitRootLogin prohibit-password"
+  validate: 'sshd -T -f %s'
+notify: restart sshd
+
+- name: make sure firewalld is enabled
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: Allow ssh on non-standard port
+  firewalld:
+    port: 9229/tcp
+    state: enabled
+    permanent: true
+  notify: restart firewalld
