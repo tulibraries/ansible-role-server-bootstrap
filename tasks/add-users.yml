@@ -1,0 +1,24 @@
+---
+
+- name: Set up wheel users
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%wheel ALL='
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+
+- name: Add standard users
+  user:
+    name: "{{ item.name }}"
+    groups: wheel
+    state: present
+  with_items: "{{ users }}"
+
+- name: Add authorized keys for users
+  authorized_key:
+    user: "{{ item.0.name }}"
+    key:  "{{ item.1 }}"
+  with_subelements:
+    - "{{ users }}"
+    - authorized
