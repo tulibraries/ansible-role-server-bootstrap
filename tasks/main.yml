@@ -32,13 +32,13 @@
   notify: restart sshd
 
 - name: Disable passwords on SSH.
-lineinfile:
-  dest: /etc/ssh/sshd_config
-  state: present
-  regexp: "^PermitRootLogin prohibit-password"
-  line: "PermitRootLogin prohibit-password"
-  validate: 'sshd -T -f %s'
-notify: restart sshd
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    state: present
+    regexp: "^PermitRootLogin prohibit-password"
+    line: "PermitRootLogin prohibit-password"
+    validate: 'sshd -T -f %s'
+  notify: restart sshd
 
 - name: make sure firewalld is enabled
   service:
