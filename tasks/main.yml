@@ -13,6 +13,7 @@
     - monit
     - fail2ban
     - zip
+    - unzip
     - policycoreutils-python
 
 - name: Set selinux to permissive mode
