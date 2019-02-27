@@ -5,7 +5,7 @@
   package:
     name: "{{ item }}"
     state: present
-    update_cache: yes
+    update_cache: true
   with_items:
     - vim
     - htop
@@ -25,11 +25,11 @@
 
 - name: update the ssh deamon to listen on non standard port
   lineinfile:
-     dest: /etc/ssh/sshd_config
-     state: present
-     regexp: "^Port"
-     line: "Port 9229"
-     validate: 'sshd -T -f %s'
+   dest: /etc/ssh/sshd_config
+   state: present
+   regexp: "^Port"
+   line: "Port 9229"
+   validate: 'sshd -T -f %s'
   notify: restart sshd
 
 - name: Disable passwords on SSH.
@@ -45,7 +45,7 @@
   service:
     name: firewalld
     state: started
-    enabled: yes
+    enabled: true
 
 - name: Allow ssh on non-standard port
   firewalld:
