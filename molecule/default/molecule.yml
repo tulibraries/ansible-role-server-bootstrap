@@ -1,6 +1,7 @@
 ---
 dependency:
   name: galaxy
+  role-file: requirements.yml
 driver:
   name: docker
 lint:
@@ -8,6 +9,12 @@ lint:
 platforms:
   - name: instance
     image: centos:7
+    command: /sbin/init
+    privileged: true
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:
   name: ansible
   lint:

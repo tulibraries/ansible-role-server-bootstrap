@@ -1,5 +1,19 @@
 ---
 - name: Converge
   hosts: all
+  pre_tasks:
+    - name: Install sshd
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - openssh
+        - openssh-server
+        - openssh-clients
+        - openssl-libs
+    - name: start the sshd
+      service:
+        name: sshd
+        state: started
   roles:
     - role: ansible-role-server-bootstrap
