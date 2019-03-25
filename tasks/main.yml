@@ -20,16 +20,17 @@
   selinux:
     policy: targeted
     state: permissive
+  when: ansible_selinux != False and ansible_selinux.status == 'enabled'
 
 - include: add-users.yml
 
 - name: update the ssh deamon to listen on non standard port
   lineinfile:
-   dest: /etc/ssh/sshd_config
-   state: present
-   regexp: "^Port"
-   line: "Port 9229"
-   validate: 'sshd -T -f %s'
+    dest: /etc/ssh/sshd_config
+    state: present
+    regexp: "^Port"
+    line: "Port {{ ssh_port }}"
+    validate: 'sshd -T -f %s'
   notify: restart sshd
 
 - name: Disable passwords on SSH.
@@ -49,7 +50,7 @@
 
 - name: Allow ssh on non-standard port
   firewalld:
-    port: 9229/tcp
+    port: "{{ ssh_port }}/tcp"
     state: enabled
     permanent: true
   notify: restart firewalld

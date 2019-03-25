@@ -1,0 +1,6 @@
+---
+
+- src: jeffwidman.yum-cron
+  name: yum-cron
+
+- src: geerlingguy.repo-epel

@@ -1,6 +1,8 @@
 ---
 # defaults file for ansible-role-server-bootstrap
 
+ssh_port: 9229
+
 users:
   - name: cdoyle
     authorized:
@@ -18,7 +20,6 @@ users:
   - name: tug76662
     authorized:
       - https://github.com/relaxing.keys
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzTfSSH9yi4BU4EyPepVO7TioB7xYEw51zWsg3ZfYFLRPgro5sXj0yfDmCF2xP6MjOU3kTWgRGw7ovDGmZyHy1v8GexdL4F0gcDrqt1borrQeJtXaeDAV0ggwKgzxKwZpmPY5FIpG+/H2oBnN8sbWF6oDxXg1HsimYk7Iugn0v62zNIiJ97XU7zWSc/zvnszmoiu+Lwv+ijXPcamd52N5ScLiJ5+r9rGu4goRHk4Bp4Kddi1pEexIR0h1Uu4YBCILaMwhTG9lND9n20NOo15I8Du7jcBw5ULTh9B9hK98IehuaQ/i9IMXCbKXHvukUF6sggnqmPIqciDex8RD/3/Ex tug76662@LIB-DLI-TBMBP.tu.temple.edu"
   - name: tuf73699
     authorized:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpPIvJcG07yr/CVPk/dYW5geeGvvzZ3yG91Z3/QGtGeuovwb1dtklWMAXAqrx9gT8B80Q/HF4uuWTi+lf6ja46ig7JsLsHXg9esnFmFjtnqlqUP4jFu+i2klBsE/fdFG9FVCYeXxrJMhR4qVhFj4o+jldeALvHuEw7AINSvVlMpSaZ14YeY2goKy52LW9xcVrY2idVMTbAftU7pOmmFDvjMsURnUdYOaQhrAWH8fCiIapi2lMO7dGl0TPj5r5yR5Cjw/gXcgL/sU6nPmTNh50Gni4NYUrcF9CkLRCjfLU5T7dMYcrL/mXtek8s/rVMNTw/Du1ZWgWhjYVkuIJvc80n tuf73699@lib-pal-dli-sn.lib.temple.edu"
