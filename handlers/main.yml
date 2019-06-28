@@ -12,3 +12,9 @@
     name: firewalld
     state: restarted
   become: true
+
+- name: restart ntpd
+  service:
+    name: ntpd
+    state: restarted
+  become: true
