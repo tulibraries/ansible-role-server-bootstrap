@@ -2,10 +2,11 @@
 # tasks file for ansible-role-server-bootstrap
 
 - name: Install some basic utility packages
-  package:
+  yum:
     name: "{{ item }}"
     state: present
     update_cache: true
+    lock_timeout: "{{ lock_timeout }}"
   with_items:
     - vim
     - htop
@@ -22,7 +23,7 @@
   selinux:
     policy: targeted
     state: permissive
-  when: ansible_selinux != False and ansible_selinux.status == 'enabled'
+  when: ansible_selinux != False and ansible_selinux.status == 'enabled'  # noqa 601
 
 - include: add-users.yml
 
