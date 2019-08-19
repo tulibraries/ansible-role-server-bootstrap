@@ -22,14 +22,10 @@ Dependencies
 - `geerlingguy.repo-epel` is required for running EPEL (extra packages for enterprise linux) updates on the new servers.
 
 
-Example Playbook
-----------------
+Managing SSH Private Keys
+-------------------------
 
-See our usage of this Role here: https://github.com/tulibraries/ansible-server-bootstrap. Here is an example of this role's usage taken from there:
-
-```
-
-```
+This role can help manage SSH users via adding authorized users and deploying user private keys. Use the `system_users_private_keys` array for adding private keys (encrypted), users, groups, and locations on remote systems. Use the `service_users_private_keys` array for adding private keys similarly, but to be run later in a playbook when the tag `service-level` specifically is called. These keys will default to mode `0600`.
 
 Developing this role
 ------------------

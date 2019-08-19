@@ -1,0 +1,28 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    service_users_private_keys:
+      - dest: "/home/root/.ssh/conan_the_deployer"
+        owner: "root"
+        group: "wheel"
+        key: "-----BEGIN RSA PRIVATE KEY-----\nblerg\n-----END RSA PRIVATE KEY-----"
+    system_users_private_keys: []
+  pre_tasks:
+    - name: Install sshd
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - openssh
+        - openssh-server
+        - openssh-clients
+        - openssl-libs
+    - name: start the sshd
+      service:
+        name: sshd
+        state: started
+  roles:
+    - role: ansible-role-server-bootstrap
+      tags:
+        - service-level

@@ -1,0 +1,13 @@
+---
+
+- name: Add service-level authorized secrets for ssh users
+  copy:
+    content: '{{ item.key }}'
+    dest: '{{ item.dest }}'
+    owner: '{{ item.owner }}'
+    group: '{{ item.group }}'
+    mode: 0600
+  with_items: "{{ service_users_private_keys }}"
+  tags:
+    - service-level
+    - never
