@@ -10,6 +10,7 @@ docker = "*"
 [packages]
 ansible = ">=2.8.0"
 molecule = "== 2.22rc3"
+docker = "*"
 
 [requires]
 python_version = "3.7"
