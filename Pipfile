@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pytest = "*"
+docker = "*"
 
 [packages]
 ansible = ">=2.8.0"

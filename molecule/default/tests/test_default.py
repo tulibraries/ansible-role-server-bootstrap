@@ -15,6 +15,7 @@ def test_ssh_port(host):
 @pytest.mark.parametrize('file, content', [
     ("/etc/ssh/sshd_config", "PermitRootLogin prohibit-password"),
     ("/etc/ssh/sshd_config", "Port 9229"),
+    ("/home/conan_the_deployer/.ssh/conan_the_deployer", "RSA PRIVATE KEY")
     ])
 def test_ssh_config(host, file, content):
     f = host.file(file)
