@@ -22,3 +22,12 @@
   with_subelements:
     - "{{ users }}"
     - authorized
+
+- name: Add authorized secrets for ssh users
+  copy:
+    content: '{{ item.key }}'
+    dest: '{{ item.dest }}'
+    owner: '{{ item.owner }}'
+    group: '{{ item.group }}'
+    mode: 0600
+  with_items: "{{ private_keys }}"
