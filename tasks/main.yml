@@ -74,3 +74,7 @@
   command: hwclock -w
   when: ntpdate_output == 0
   changed_when: false
+
+- include: service.yml
+  tags:
+    - service-level

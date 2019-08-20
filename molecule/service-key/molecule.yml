@@ -1,0 +1,27 @@
+---
+dependency:
+  name: galaxy
+  role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    image: centos:7
+    command: /sbin/init
+    privileged: true
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: service-key
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
