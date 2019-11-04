@@ -58,6 +58,13 @@
     permanent: true
   notify: restart firewalld
 
+- name: Set system timezone to EST
+  timezone:
+    name: "{{ timezone }}"
+  notify:
+    - restart crond
+    - restart ntpd
+
 - name: Make sure ntpd is enabled
   service:
     name: ntpd

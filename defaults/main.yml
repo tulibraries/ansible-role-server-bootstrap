@@ -3,6 +3,7 @@
 
 ssh_port: 9229
 lock_timeout: 1
+timezone: "America/New_York"
 
 users:
   - name: cdoyle
@@ -12,15 +13,9 @@ users:
     authorized:
       - https://github.com/dkinzer.keys
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHqdYn74gNSfOH2Mu/OJDGzLpuMrB55jUHD2Sfrd5Qd8mFTuqynenndKRLPfk0fs95dQjFWCvIiuVCGYa1sCZ1vwqIo6J5/vzTckOqbdbcWCcwbdbFGX/uh/kmnO0yegUmw0vsRuBZ+tRFcPieN+Msd6puaEdiSWIQyDsNEQHHuRUuC562xT8iY9LXQ9PhzmZ4Bn49MAMuo9OrEIwVR1ke6UgDJwVUmqbE1Ku54ALwa7CHmQq87JjBeFOMb26IcuvcnhDqPHcWZjq5TBDU2A+RTXjSUTERC+z3hlrepbLkZTTHaTbbFyOcY/Jbzacys0MpudXV7d0T/wvRrEg87Z5hTNwxmQLC7Ilp/bwtNf6lKdT8rlv+q/KisJhlaT7wcykCCUnoeBVOlFBt/piOLKmYgMCXpRULZO8WG1/PfeUemUbzDIvAf3avZc27mtj4aVGofPjvfW0ieBDIqCGdTdodd7srBNfXUb/IFPqUjyE/tq654o38rKmfdAMk9a4tKC52EYXNA8KvcLRYYrp9lTO9h0wBazo4RdOzGjpvt5wYmwM9joJbl0oDAlXukIWsThDSm6/Yv+w0NVsGj8uytl5/sBgtU289eEnxm2LKtNQVteNZ5tM7vl4SIhHxLfTKDNgMpka/SIZwdoiJrdwFByKp+1Q0Evf4GG6eTZEJdBAWhw=="
-  - name: tug78195
-    authorized:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYqTSVt4mBtzW6UABegs6R/9QQhR5KUqc4KfnghFtWdIQB9dOChPg3idXFuREoM8MktYgtSCohDguOKt4cH/uKvNiH/4jidaUSZUnfY6/U8k0gBMOsgeDmCEs1p3waCL/90liRY1U7ouMrQmO80i1XbzqmehffQJ84txDPfgIeGP3u1Z1tHTpDv1umi4vmZzjzYzEAZz17LnEJREuLG/JwdZQ8CRLUKQLHeFMj/qj3/zNCL+HBvrVIHhTmSfnDpyeCdp6q2tiAPQlK0rgSZUWZs+XCWw9S94MSABR6RJ5ZZ7itCrrMdTV5t0MhK3F9vdI9kp2n6/VnNibfx5qIfOgZ david.lacy@temple.edu"
   - name: tug34268
     authorized:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDOfYguovMJ9cfvRZUyJgXVutL+PWgNi+51dys0wOj0NsELMMM2urNHPHPtVNC4qJ/ZkF/Mg/3FI7ITFNiyOLw3dNiE/Idp5QlYeCrP2CjAzKxfAxcFpXnV23vLApImaLfvIWBIrakayn5YnMMWT3xsnqfqt8sMEMSQyiXg4XqhNpAuKd7ck3DvjSBuN3KQjMMD7Fy1b5dMHO/sCPg88MnqUplne4PuzIfB9BJ+iZYWQD1Depm0OdWRQnWar0i5978jTTlv6kBNbSNPzXegTqeyQm0dAV01of0hfmMI+KRTYGD6+PjxThmDSdP3ip8bT51B5KrULinjaAg3s+AYZsnJQpUb6AVdRRMl/ZPTk7LHFglfpgi+G2PdCnmKBVazd1FXrCjlDcHKi8TcPUkHBWFC+Uw9hrA+7wx81XzOU2civpQJc2xd7dpE20oQ4qeGwIFzytMiIl8JEY8PvvHeE25GhR/wao+rCVawbF4fU5tMtb7FjSbDFVd8Mna8L4jSqr9AyUnG5fmogaprBXGeyZ7R9c501KxhkfMsXkGbCQGCHYQtfaYOy174UHnbQCMnOKmF1N+fp6a5Qpkqlz83yMne9O3V3Eyu+MN1zRn4uIEgpnLN5ngAJVK9DjJ1/CwKBlFEfk5gTDVfXg1I3s4j6+JkwckaaJixpp0BHsy7oWykww== chad.nelson@temple.edu"
-  - name: tug76662
-    authorized:
-      - https://github.com/relaxing.keys
   - name: tuf73699
     authorized:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpPIvJcG07yr/CVPk/dYW5geeGvvzZ3yG91Z3/QGtGeuovwb1dtklWMAXAqrx9gT8B80Q/HF4uuWTi+lf6ja46ig7JsLsHXg9esnFmFjtnqlqUP4jFu+i2klBsE/fdFG9FVCYeXxrJMhR4qVhFj4o+jldeALvHuEw7AINSvVlMpSaZ14YeY2goKy52LW9xcVrY2idVMTbAftU7pOmmFDvjMsURnUdYOaQhrAWH8fCiIapi2lMO7dGl0TPj5r5yR5Cjw/gXcgL/sU6nPmTNh50Gni4NYUrcF9CkLRCjfLU5T7dMYcrL/mXtek8s/rVMNTw/Du1ZWgWhjYVkuIJvc80n tuf73699@lib-pal-dli-sn.lib.temple.edu"

@@ -18,3 +18,9 @@
     name: ntpd
     state: restarted
   become: true
+
+- name: restart crond
+  service:
+    name: crond
+    state: restarted
+  become: true
