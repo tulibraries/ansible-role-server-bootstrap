@@ -6,11 +6,12 @@ jobs:
     working_directory: ~/ansible-role-server-bootstrap
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: install dependencies
           command: |
             pip install pipenv
-            pipenv install
+            pipenv install --dev
       - run:
           name: run tests
           command: |
