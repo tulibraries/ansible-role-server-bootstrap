@@ -24,3 +24,4 @@
     name: crond
     state: restarted
   become: true
+  ignore_errors: true
