@@ -21,10 +21,3 @@ def test_ssh_config(host, file, content):
     f = host.file(file)
     assert f.exists
     assert f.contains(content)
-
-
-@pytest.mark.parametrize('svc', ['firewalld', 'ntpd'])
-def test_services_running(host, svc):
-    service = host.service(svc)
-    assert service.is_running
-    assert service.is_enabled
