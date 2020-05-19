@@ -21,3 +21,7 @@ def test_ssh_config(host, file, content):
     f = host.file(file)
     assert f.exists
     assert f.contains(content)
+
+
+def test_hostname(host):
+    host.file('/etc/hostname').contains("default")

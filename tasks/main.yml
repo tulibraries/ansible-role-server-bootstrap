@@ -76,6 +76,10 @@
   when: ntpdate_output == 0
   changed_when: false
 
+- name: Set hostname
+  hostname:
+    name: "{{ inventory_hostname }}"
+
 - include: service.yml
   tags:
     - service-level
