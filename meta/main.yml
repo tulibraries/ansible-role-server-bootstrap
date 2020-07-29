@@ -14,4 +14,4 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-  - role: "geerlingguy.repo-epel"
+  - role: geerlingguy.repo-epel
