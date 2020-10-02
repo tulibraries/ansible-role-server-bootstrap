@@ -20,6 +20,9 @@ users:
   - name: tuh42082
     authorized:
       - https://github.com/sensei100.keys
+  - name: tuo07693
+    authorized:
+      - https://github.com/quoideneuf.keys
   - name: conan_the_deployer
     authorized:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDNdyy/Nv2sbf2jwhTksqQSHvCAQ9+8BrZApCAu6N80oMqPGC9oeohrNcr2zonL+K5LsWxxtxNIQDB2qlo5JR/jP/vBTyzUmxU1B7FP50a2JyziLxzAQUPdVp9zdnv/bncyhJCHo1+XWfy6ZWpNV2ejumHjeAqiIkNGg5jB0JuOo0umiyIS+v1mh2G0kwSsf1rIz//avlLqhydQQfOUR6fp635N2kZYgPMOE/07beNAxQHy6zRq/tCvlBmUhJg8Sm/STnpevKMUV9xcI1IFLNtbHFUPdvGjdFKplRL8Bn28Zzja92aYZ7miNKQiNL1sFyxmwSkKEOdlnvZzfX6quCIH6bEGz2vZPJRGhPav455Iu6/HbWzjOlqF0sK9pOYKHBFSk6sSWrgAT6eg325nXjLzNIQLvlbq5EQsxP3Tr5bkVPPd05PmTbtrYr8jv7HmPp59D2o8qJWXK1mSegegvYtXcowFZXD5o6AyhoAb4IMPNWOMgWMreWK8WPbkFLf6L4WYV3i92v92HcfVddhWy74G2V7zIK/77IR7lYZZSlFmv6UD/fhnuw6bouPpE08TH5aTOT5wg9V3MkfgviJoALECjwdLSo6KFRkeUimKWIe7KvRyY6UHYzs5PZJEpShyuvnkJm9t2ejseStLP+dRHcLiCyBRta2RCcLTx7JkXC416Q== conan_the_deployer@temple.edu"
