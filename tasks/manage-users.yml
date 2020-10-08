@@ -23,6 +23,13 @@
     - "{{ users }}"
     - authorized
 
+- name: Remove users
+  user:
+    name: "{{ item.name }}"
+    state: absent
+  with_items: "{{ remove_users }}"
+
+
 - name: Add system-level authorized secrets for ssh users
   copy:
     content: '{{ item.key }}'
