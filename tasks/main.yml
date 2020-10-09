@@ -25,8 +25,7 @@
     state: permissive
   when: ansible_selinux != False and ansible_selinux.status == 'enabled'  # noqa 601
 
-- include: add-users.yml
-- include: remove-users.yml
+- include: manage-users.yml
 
 - name: update the ssh deamon to listen on non standard port
   lineinfile:
