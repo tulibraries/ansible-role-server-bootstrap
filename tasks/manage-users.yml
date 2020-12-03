@@ -29,7 +29,6 @@
     state: absent
   with_items: "{{ remove_users }}"
 
-
 - name: Add system-level authorized secrets for ssh users
   copy:
     content: '{{ item.key }}'
