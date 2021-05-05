@@ -22,12 +22,14 @@ def test_ssh_config(host, file, content):
     assert f.exists
     assert f.contains(content)
 
+
 @pytest.mark.parametrize('file, content', [
     ("/home/conan_the_deployer/.ssh/conan_the_deployer", "RSA PRIVATE KEY")
     ])
-def test_ssh_config(host, file, content):
+def test_ssh_config_conan(host, file, content):
     f = host.file(file)
     assert not f.exists
+
 
 @pytest.mark.parametrize('svc', ['firewalld', 'ntpd'])
 def test_services_running(host, svc):
