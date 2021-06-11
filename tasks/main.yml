@@ -3,27 +3,16 @@
 
 - name: Install some basic utility packages
   yum:
-    name: "{{ item }}"
+    name: ["vim", "htop", "sendmail", "monit", "fail2ban", "zip", "unzip", "policycoreutils-python", "ntp", "ntpdate"]
     state: present
     update_cache: true
     lock_timeout: "{{ lock_timeout }}"
-  with_items:
-    - vim
-    - htop
-    - sendmail
-    - monit
-    - fail2ban
-    - zip
-    - unzip
-    - policycoreutils-python
-    - ntp
-    - ntpdate
 
 - name: Set selinux to permissive mode
   selinux:
     policy: targeted
     state: permissive
-  when: ansible_selinux != False and ansible_selinux.status == 'enabled'  # noqa 601
+  when: ansible_selinux != False and ansible_selinux.status == "enabled"  # noqa 601
 
 - include: manage-users.yml
 
