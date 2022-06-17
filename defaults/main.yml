@@ -18,7 +18,7 @@ users:
     authorized:
       - https://github.com/sensei100.keys
   - name: tug92371
-    authorized: 
+    authorized:
       - https://github.com/ebtoner.keys
   - name: conan_the_deployer
     authorized:
