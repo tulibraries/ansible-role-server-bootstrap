@@ -8,6 +8,7 @@
     group: '{{ item.group }}'
     mode: 0600
   with_items: "{{ service_users_private_keys }}"
+  no_log: true
   tags:
     - service-level
     - never
