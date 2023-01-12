@@ -37,3 +37,4 @@
     group: '{{ item.group }}'
     mode: 0600
   with_items: "{{ system_users_private_keys }}"
+  no_log: true
