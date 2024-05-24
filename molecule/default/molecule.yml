@@ -3,15 +3,10 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
-  flake8 .
 
 platforms:
   - name: instance
-    image: centos:7
+    image: rockylinux:8
     command: /sbin/init
     privileged: true
     capabilities:
