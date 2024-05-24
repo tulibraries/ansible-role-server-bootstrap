@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/ansible-role-server-bootstrap
     docker:
       - image: cimg/python:3.12.3
-        environment
+        environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
