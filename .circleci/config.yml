@@ -12,8 +12,7 @@ jobs:
       - run:
           name: Install
           command: pipenv install --dev
-      - setup_remote_docker:
-          version: 20.10.11
+      - setup_remote_docker
       - run:
           name: Molecule
           command: pipenv run molecule test
