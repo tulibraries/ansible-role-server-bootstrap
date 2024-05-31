@@ -1,6 +1,7 @@
 ---
 
-- src: jeffwidman.yum-cron
-  name: yum-cron
+- src: exploide.dnf-automatic
+  name: dnf-automatic
 
 - src: geerlingguy.repo-epel
+  name: epel
