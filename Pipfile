@@ -9,7 +9,7 @@ docker = "*"
 codecov = "*"
 yamllint = "*"
 flake8 = "*"
-testinfra = "*"
+pytest-testinfra = "*"
 
 [packages]
 ansible = "==9.6.0"
