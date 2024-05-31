@@ -7,7 +7,7 @@ driver:
 platforms:
   - name: instance
     image: rockylinux:8
-    command: /sbin/init
+    command: /lib/systemd/systemd
     privileged: true
     cgroupns_mode: host
     capabilities:
