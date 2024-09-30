@@ -17,19 +17,12 @@ users:
   - name: tuh42082
     authorized:
       - https://github.com/sensei100.keys
-  - name: tug92371
-    authorized:
-      - https://github.com/ebtoner.keys
   - name: conan_the_deployer
     authorized:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCXwjeGR6wHAEQ1Q2Vhh3g2TG5YlNoGphNTz51icJbb1um3tUaJUq5jUcqbOJv9HS1rn6PFK0DjhpNJGbi5bWfdACApgQM2bGHjPyOAOiGPQX7bfvMgwGp7HqhHexmPjtsnDJK5Ynio5nuJv2s9l/5hS/mO0pxjVzzWS+bSmo3Edq0LXGG6yF1wRWi4S/rk3ywKiH16tOLIQkxoIo8L2Awyqsj9Nof3YZYxHnszryQ5sLvptqy0AGa5y2DLZFVmJZb+lR0gmFfBkPsnDTRmeWeEf+C2WzLv6nQBcwhb4noEbsdUM3W3MU28r5Q6+MVnoDyPMmxAnLHSPNhek/1BuY9/xhxozYUjXZZ8GWlFwaV4NHoZKoI+Z5mh7X/oHa9FPpeL49YjGRJPNygPeSBaaiIJ/BIIix0i1FGrDxC5yW4jJAZetwZipkcLHlGawe6NyJ9kZRIVpo1YZnYg2v/OwO3o4uQ0BbvVgJJ7cgl2IIXO4WorrskOInXf/v7OMGFKPQ/8E0/6t3CoCmAQzfyDEc13V6+B/vg3WDaPlnfM9aVJtymBd2AwVPHP2um/OT4eh+nq6dSyQaKn/rJ6Ocxsy6PHmtnZuvvUgCdO4EGWsPXLWfp8xKjGCgHRHGHWzyqF/ztv6FCm/apJEkI6HWyo19LCam6eIF/rynoHqsihIto6UQ== conan_the_deployer_2023_01_13"
 
 remove_users:
-  - name: tug78195
-  - name: tug76662
-  - name: tul08567
-  - name: tug34268
-  - name: tuo07693
+  - name: tug92371
 
 system_users_private_keys:
   - dest: "/home/conan_the_deployer/.ssh/conan_the_deployer"
