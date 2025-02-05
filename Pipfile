@@ -12,9 +12,9 @@ flake8 = "*"
 pytest-testinfra = "*"
 
 [packages]
-ansible = "==9.6.1"
+ansible = "==9.7.0"
 cryptography = "==43.0.1"
-molecule = "*"
+molecule = "24.9.0"
 molecule-docker = "*"
 
 # Remove when this is fixed: https://github.com/ansible-collections/community.docker/issues/868#issuecomment-2124979976
