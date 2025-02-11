@@ -13,7 +13,7 @@ pytest-testinfra = "*"
 
 [packages]
 ansible = "==10.7.0"
-cryptography = "==43.0.1"
+cryptography = "==44.0.1"
 molecule = "*"
 molecule-docker = "*"
 
