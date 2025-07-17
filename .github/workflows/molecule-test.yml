@@ -16,7 +16,7 @@ jobs:
     runs-on: [ systemd-runner ]
     strategy:
       matrix:
-        python-version: [ "3.11" ]
+        python-version: [ "3.12.3" ]
 
     steps:
       - name: Checkout code
