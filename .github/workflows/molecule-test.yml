@@ -14,9 +14,7 @@ concurrency:
 jobs:
   molecule:
     runs-on: [ systemd-runner ]
-    strategy:
-      matrix:
-        python-version: [ "3.9.23" ]
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,7 +22,6 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
           cache: "pipenv"
 
       - name: Install pipenv
