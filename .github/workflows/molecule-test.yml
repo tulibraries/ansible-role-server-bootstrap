@@ -14,6 +14,7 @@ concurrency:
 jobs:
   molecule:
     runs-on: [ systemd-runner ]
+    timeout-minutes: 30
     strategy:
       matrix:
         python-version: [ 3.12 ]
