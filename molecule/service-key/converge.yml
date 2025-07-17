@@ -10,7 +10,7 @@
     system_users_private_keys: []
   pre_tasks:
     - name: Install sshd
-      yum:
+      dnf:
         name: "{{ item }}"
         state: present
       loop:

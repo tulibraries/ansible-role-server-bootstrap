@@ -2,7 +2,7 @@
 # tasks file for ansible-role-server-bootstrap
 
 - name: Install some basic utility packages
-  yum:
+  dnf:
     name: ["vim", "htop", "sendmail", "monit", "fail2ban", "zip", "unzip", "policycoreutils-python-utils", "chrony"]
     state: present
     update_cache: true

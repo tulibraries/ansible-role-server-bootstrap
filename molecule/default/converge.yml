@@ -2,15 +2,16 @@
 - name: Converge
   hosts: all
   pre_tasks:
-    - name: Install sshd
-      yum:
-        name: "{{ item }}"
+    - name: Install sshd and dependencies
+      ansible.builtin.dnf:
+        name:
+          - openssh
+          - openssh-server
+          - openssh-clients
+          - openssl-libs
         state: present
-      loop:
-        - openssh
-        - openssh-server
-        - openssh-clients
-        - openssl-libs
+        update_cache: yes
+      become: true
     - name: start the sshd
       service:
         name: sshd
