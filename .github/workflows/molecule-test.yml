@@ -14,14 +14,18 @@ concurrency:
 jobs:
   molecule:
     runs-on: [ systemd-runner ]
-    
+    strategy:
+      matrix:
+        python-version: [ "3.12.3" ]
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: kishaningithub/setup-python-amazon-linux@v1
         with:
+          python-version: ${{ matrix.python-version }}
           cache: "pipenv"
 
       - name: Install pipenv
