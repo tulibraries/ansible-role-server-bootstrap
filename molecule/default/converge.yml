@@ -11,6 +11,7 @@
           - openssl-libs
         state: present
         update_cache: yes
+        assumeyes: yes 
       become: true
     - name: start the sshd
       service:
