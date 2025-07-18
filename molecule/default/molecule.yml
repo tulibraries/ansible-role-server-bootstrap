@@ -4,6 +4,10 @@ dependency:
   role-file: requirements.yml
 driver:
   name: docker
+  options:
+    - "--privileged"
+    - "--network=host"
+    - "-v /sys/fs/cgroup:/sys/fs/cgroup:ro"
 platforms:
   - name: instance
     image: "geerlingguy/docker-rockylinux9-ansible:latest"
