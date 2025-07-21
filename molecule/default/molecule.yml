@@ -3,7 +3,7 @@ dependency:
   name: galaxy
   role-file: requirements.yml
 driver:
-  name: docker
+  name: podman
 platforms:
   - name: instance
     image: "geerlingguy/docker-rockylinux9-ansible:latest"

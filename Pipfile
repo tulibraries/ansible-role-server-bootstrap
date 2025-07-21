@@ -15,7 +15,7 @@ pytest-testinfra = "*"
 ansible = "==10.7.0"
 cryptography = "==44.0.1"
 molecule = "*"
-molecule-docker = "*"
+molecule-podman = "*"
 
 # Remove when this is fixed: https://github.com/ansible-collections/community.docker/issues/868#issuecomment-2124979976
 requests = "==2.32.4"
