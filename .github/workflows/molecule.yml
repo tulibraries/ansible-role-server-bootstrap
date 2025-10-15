@@ -2,22 +2,25 @@ name: Molecule Test
 
 on:
   push:
-  pull_request:
-    types: [ opened, synchronize, reopened ]
-    branches: [ main ]
+    branches-ignore:
+      - main
   workflow_dispatch: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}
   cancel-in-progress: true
 
+# Temporary variable until molecule-docker officially supports ansible 2.19+
+env:
+  ANSIBLE_ALLOW_BROKEN_CONDITIONALS: "True"
+
 jobs:
   molecule:
-    runs-on: [ self-hosted,systemd-runner ]
+    runs-on: [self-hosted, systemd-runner]
     timeout-minutes: 30
     strategy:
       matrix:
-        python-version: [ 3.12 ]
+        python-version: [3.12]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,14 +33,12 @@ jobs:
 
       - name: Install pipenv
         run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
-      
 
       - name: Install dependencies
         run: pipenv install --dev
 
+      - name: Lint the role
+        run: pipenv run ansible-lint . --exclude=molecule/default/roles
+
       - name: Molecule test
         run: pipenv run molecule test
-
-
-      
-
