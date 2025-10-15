@@ -1,7 +1,7 @@
 ---
 
 - name: Set up wheel users
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /etc/sudoers
     state: present
     regexp: '^%wheel ALL='
@@ -9,32 +9,34 @@
     validate: 'visudo -cf %s'
 
 - name: Add standard users
-  user:
+  ansible.builtin.user:
     name: "{{ item.name }}"
     groups: wheel
     state: present
   with_items: "{{ users }}"
+  no_log: true
 
 - name: Add authorized keys for users
-  authorized_key:
+  ansible.posix.authorized_key:
     user: "{{ item.0.name }}"
     key: "{{ item.1 }}"
   with_subelements:
     - "{{ users }}"
     - authorized
+  no_log: true
 
 - name: Remove users
-  user:
+  ansible.builtin.user:
     name: "{{ item.name }}"
     state: absent
   with_items: "{{ remove_users }}"
 
 - name: Add system-level authorized secrets for ssh users
-  copy:
+  ansible.builtin.copy:
     content: '{{ item.key }}'
     dest: '{{ item.dest }}'
     owner: '{{ item.owner }}'
     group: '{{ item.group }}'
-    mode: 0600
+    mode: "0600"
   with_items: "{{ system_users_private_keys }}"
   no_log: true

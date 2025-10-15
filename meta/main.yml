@@ -6,12 +6,13 @@ galaxy_info:
   license: BSD
   role_name: "ansible_role_server_bootstrap"
   namespace: "tulibraries"
-  min_ansible_version: 2.8
+  min_ansible_version: "2.8"
 
   platforms:
-    - name: Centos
+    - name: Rocky
       versions:
-        - 7
+        - "8.0"
+        - "9.0"
 
   galaxy_tags: []
 

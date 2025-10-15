@@ -2,61 +2,63 @@
 # tasks file for ansible-role-server-bootstrap
 
 - name: Install some basic utility packages
-  dnf:
+  ansible.builtin.dnf:
     name: ["vim", "htop", "sendmail", "monit", "fail2ban", "zip", "unzip", "policycoreutils-python-utils", "chrony"]
     state: present
     update_cache: true
     lock_timeout: "{{ lock_timeout }}"
 
 - name: Set selinux to permissive mode
-  selinux:
+  ansible.posix.selinux:
     policy: targeted
     state: permissive
-  when: ansible_selinux != False and ansible_selinux.status == "enabled"  # noqa 601
+  when: ansible_selinux != False and ansible_selinux.status == "enabled"  # noqa literal-compare
 
-- include_tasks: manage-users.yml
+- name: Manage users
+  ansible.builtin.include_tasks: manage-users.yml
 
-- name: update the ssh deamon to listen on non standard port
-  lineinfile:
+- name: Update the ssh deamon to listen on non standard port
+  ansible.builtin.lineinfile:
     dest: /etc/ssh/sshd_config
     state: present
     regexp: "^Port"
     line: "Port {{ ssh_port }}"
     validate: 'sshd -T -f %s'
-  notify: restart sshd
+  notify: Restart sshd
 
 - name: Disable passwords on SSH.
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /etc/ssh/sshd_config
     state: present
     regexp: "^PermitRootLogin prohibit-password"
     line: "PermitRootLogin prohibit-password"
     validate: 'sshd -T -f %s'
-  notify: restart sshd
+  notify: Restart sshd
 
-- name: make sure firewalld is enabled
-  service:
+- name: Make sure firewalld is enabled
+  ansible.builtin.service:
     name: firewalld
     state: started
     enabled: true
 
 - name: Allow ssh on non-standard port
-  firewalld:
+  ansible.posix.firewalld:
     port: "{{ ssh_port }}/tcp"
     state: enabled
     permanent: true
-  notify: restart firewalld
+  notify: Restart firewalld
 
 - name: Make sure chrony is enabled
-  service:
+  ansible.builtin.service:
     name: chronyd
     state: started
     enabled: true
 
 - name: Set hostname
-  hostname:
+  ansible.builtin.hostname:
     name: "{{ inventory_hostname }}"
 
-- include_tasks: service.yml
+- name: Include service tasks
+  ansible.builtin.include_tasks: service.yml
   tags:
     - service-level
