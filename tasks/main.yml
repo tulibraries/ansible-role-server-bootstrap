@@ -40,6 +40,9 @@
     name: firewalld
     state: started
     enabled: true
+  when:
+    - ansible_service_mgr == "systemd"
+    - ansible_virtualization_type != "docker"
 
 - name: Allow ssh on non-standard port
   ansible.posix.firewalld:

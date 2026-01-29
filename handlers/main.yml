@@ -12,6 +12,9 @@
     name: firewalld
     state: restarted
   become: true
+  when:
+    - ansible_service_mgr == "systemd"
+    - ansible_virtualization_type != "docker"
 
 - name: Restart ntpd
   ansible.builtin.service:
